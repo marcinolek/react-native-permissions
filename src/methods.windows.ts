@@ -31,6 +31,10 @@ async function checkNotifications(): Promise<NotificationsResponse> {
   return {status: await NativeModule.CheckNotifications(), settings: {}};
 }
 
+async function shouldShowPermissionRationale(_: Permission): Promise<boolean> {
+  return false;
+}
+
 async function checkMultiple<P extends Permission[]>(
   permissions: P,
 ): Promise<Record<P[number], PermissionStatus>> {
@@ -75,4 +79,5 @@ export const methods: Contract = {
   requestLocationAccuracy,
   requestMultiple,
   requestNotifications: checkNotifications,
+  shouldShowPermissionRationale
 };

@@ -24,6 +24,10 @@ async function checkMultiple<P extends Permission[]>(
   }, {} as Record<P[number], PermissionStatus>);
 }
 
+async function shouldShowPermissionRationale(permission: Permission): Promise<boolean> {
+  return false;
+}
+
 export const methods: Contract = {
   check,
   checkLocationAccuracy,
@@ -35,4 +39,5 @@ export const methods: Contract = {
   requestLocationAccuracy,
   requestMultiple: checkMultiple,
   requestNotifications: checkNotifications,
+  shouldShowPermissionRationale
 };

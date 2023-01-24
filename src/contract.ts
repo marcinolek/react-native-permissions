@@ -17,7 +17,7 @@ export type Contract = {
   request(permission: Permission, rationale?: Rationale): Promise<PermissionStatus>;
   requestLocationAccuracy(options: LocationAccuracyOptions): Promise<LocationAccuracy>;
   requestNotifications(options: NotificationOption[]): Promise<NotificationsResponse>;
-
+  shouldShowPermissionRationale(permission: Permission): Promise<boolean>;
   checkMultiple<P extends Permission[]>(
     permissions: P,
   ): Promise<Record<P[number], PermissionStatus>>;

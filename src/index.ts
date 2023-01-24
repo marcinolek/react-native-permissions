@@ -24,6 +24,7 @@ export const request = methods.request;
 export const requestLocationAccuracy = methods.requestLocationAccuracy;
 export const requestMultiple = methods.requestMultiple;
 export const requestNotifications = methods.requestNotifications;
+export const shouldShowPermissionRationale = methods.shouldShowPermissionRationale;
 
 export default {
   PERMISSIONS,
@@ -39,4 +40,5 @@ export default {
   requestLocationAccuracy,
   requestMultiple,
   requestNotifications,
+  shouldShowPermissionRationale
 };
